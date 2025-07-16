@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume</title>
+    <style> 
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            display: inline-block;
+            text-align: left;
+        }
+        h1 {
+            font-size: 50px;
+        }
+        h2 {
+            font-size: 36px;
+        }
+        h3 {
+            font-size: 24px;
+            color: purple;
+        }
+        h4 {
+            color: purple;
+        }
+        img {
+            width: 200px;
+            height: 200px;
+        }
+        .full {
+            width: 100%;
+            margin: 20px;
+            display: grid;
+            grid-template-columns: 2fr 4fr;
+        }
+        .left {
+            position: initial;
+            padding: 20px;
+        }
+        .right {
+            position: initial;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="full">
+        <div class="left">
+            <h1>Rohit </h1>
+            <p>A passionate individual with a keen interest in technology and innovation.</p>
+            <address>
+                Address: 123 Main St, City, Country<br>
+                Contact: +123456789<br>
+                Email: rohit@example.com
+            </address>
+            <p>Github : <a href = "https://github.com">visit-site</a></p>
+            <h3>Skills</h3>
+            <ul>
+                <li>Programming Languages
+                    <ul>
+                        <li>JavaScript</li>
+                        <li>Python</li>
+                        <li>HTML/CSS</li>
+                    </ul>
+                </li>
+                <li>Web Development</li>
+            </ul>
+            <h3>Languages</h3>
+            <ul>
+                <li>English</li>
+                <li>Spanish</li>
+            </ul>
+        </div>
+        <div class="right">
+            <h2>Education</h2>
+            <h3>University Name</h3>
+            <img src="bg.png" alt="img">
+            <p>Bachelor of Science in Computer Science<br>
+                Expected Graduation: 2024<br>
+                GPA: 3.9</p>
+            <h3>College Name</h3>
+            <p>Department of Pre-University Education<br>
+                Graduated: 2020<br>
+                Percentage: 95%</p>
+            <h3>School Name</h3>
+            <p>High School Diploma<br>
+                Graduated: 2018<br>
+                Percentage: 92%</p>
+            <h2>Projects</h2>
+            <div>
+                <h3>Project 1</h3>
+                <p>A simple web application for managing tasks efficiently.</p>
+            </div>
+            <div>
+                <h3>Project 2</h3>
+                <p>An e-commerce website built using modern web technologies.</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rohit | Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 40px;
+            color: #333;
+        }
+        .header p {
+            font-size: 16px;
+            color: #666;
+        }
+        .contact {
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+        .contact a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section h2 {
+            border-bottom: 2px solid purple;
+            padding-bottom: 5px;
+            color: purple;
+            margin-bottom: 15px;
+        }
+        .two-column {
+            display: flex;
+            gap: 30px;
+        }
+        .left, .right {
+            flex: 1;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        ul li {
+            margin-bottom: 5px;
+        }
+        h3 {
+            margin: 10px 0 5px;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="bg.png" alt="Profile Picture">
+            <h1>Rohit</h1>
+            <p>A passionate individual with a keen interest in technology and innovation.</p>
+        </div>
+        
+        <div class="contact">
+            <p>📍 123 Main St, City, Country | 📞 +123456789 | 📧 <a href="mailto:rohit@example.com">rohit@example.com</a> | 🔗 <a href="https://github.com">GitHub</a></p>
+        </div>
+
+        <div class="two-column">
+           
+            <div class="left">
+                <div class="section">
+                    <h2>Skills</h2>
+                    <ul>
+                        <li><strong>Programming Languages:</strong>
+                            <ul>
+                                <li>JavaScript</li>
+                                <li>Python</li>
+                                <li>HTML/CSS</li>
+                            </ul>
+                        </li>
+                        <li>Web Development</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>Languages</h2>
+                    <ul>
+                        <li>English</li>
+                        <li>Spanish</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="right">
+                <div class="section">
+                    <h2>Education</h2>
+                    <h3>University Name</h3>
+                    <p>B.Sc in Computer Science<br>Expected Graduation: 2024<br>GPA: 3.9</p>
+
+                    <h3>College Name</h3>
+                    <p>Department of Pre-University Education<br>Graduated: 2020<br>Percentage: 95%</p>
+
+                    <h3>School Name</h3>
+                    <p>High School Diploma<br>Graduated: 2018<br>Percentage: 92%</p>
+                </div>
+
+                <div class="section">
+                    <h2>Projects</h2>
+                    <h3>Project 1</h3>
+                    <p>A simple web application for managing tasks efficiently.</p>
+
+                    <h3>Project 2</h3>
+                    <p>An e-commerce website built using modern web technologies.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> -->
