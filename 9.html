@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>XHTML Validation Form</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style type="text/css">
+      .container {
+        margin: 50px auto;
+        width: 400px;
+        padding: 30px;
+        background-color: #f5f5f5;
+        border-radius: 10px;
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+      }
+
+      input {
+        font-size: 12px;
+        padding: 10px;
+        margin: 5px;
+        border-radius: 2px;
+        width: 70%;
+      }
+
+      button {
+        font-size: 12px;
+        background-color: rgb(204, 222, 216);
+        padding: 10px;
+      }
+    </style>
+
+    <script type="text/javascript">
+      function validate(event) {
+        event.preventDefault(); // Prevent form from submitting
+        function validate(event) {
+          event.preventDefault(); // Prevent form from submitting
+
+          var userId = document.getElementById("user").value;
+          var name = document.getElementById("name").value;
+          var password = document.getElementById("password").value;
+          var email = document.getElementById("email").value;
+
+          var nameRegex = /^[a-zA-Z\s]+$/;
+          var passwordRegex =
+            /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+          var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+          if (!nameRegex.test(name) || name.length < 15) {
+            alert(
+              "Name must contain only alphabets and be at least 15 characters long."
+            );
+            return false;
+          }
+
+          if (!passwordRegex.test(password)) {
+            alert(
+              "Password must be at least 8 characters long, include one uppercase letter, one special character, and alphanumeric characters."
+            );
+            return false;
+          }
+
+          if (!emailRegex.test(email)) {
+            alert("Invalid email address.");
+            return false;
+          }
+
+          alert("Form submitted successfully!");
+          return true;
+        }
+
+        alert("Form submitted successfully!");
+        return true;
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+      <form onsubmit="validate(event)">
+        <h1>Validation Form</h1>
+        <label for="user">Enter Your User ID:</label><br />
+        <input type="text" id="user" placeholder="Your User ID" /><br />
+
+        <label for="name">Enter Your Name:</label><br />
+        <input type="text" id="name" placeholder="Your Name" /><br />
+
+        <label for="password">Enter Your Password:</label><br />
+        <input
+          type="password"
+          id="password"
+          placeholder="Your Password"
+        /><br />
+
+        <label for="email">Enter Your Email ID:</label><br />
+        <input type="text" id="email" placeholder="Your Email" /><br /><br />
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>

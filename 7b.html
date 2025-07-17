@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Validate Form</title>
+  <style>
+    .container {
+      margin: 50px auto;
+      width: 400px;
+      padding: 30px;
+      background-color: #f5f5f5;
+      border-radius: 10px;
+      box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+    }
+
+    input[type="text"], select, button, textarea {
+      font-size: 15px;
+      padding: 10px;
+      margin: 5px;
+      border-radius: 2px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: rgb(204, 222, 216);
+      text-align: center;
+    }
+  </style>
+
+  <script>
+    function validate(event) {
+      event.preventDefault();
+
+      let name = document.getElementById("name").value;
+      let email = document.getElementById("email").value;
+      let mobile = document.getElementById("mobile").value;
+      let gender = document.getElementById("gender").value;
+      let color = document.getElementById("color").value;
+      let resultBox = document.getElementById("result"); // get the textarea
+
+      if (name === "") {
+        alert("Please enter your name");
+        return;
+      }
+
+      if (email === "" || !email.includes("@") || !email.includes(".")) {
+        alert("Please enter a valid Email");
+        return;
+      }
+
+      if (mobile === "" || mobile.length !== 10 || isNaN(mobile)) {
+        alert("Please enter a valid Mobile Number");
+        return;
+      }
+
+      if (gender === "") {
+        alert("Please select your Gender");
+        return;
+      }
+
+      if (color === "") {
+        alert("Please enter your Favorite Color");
+        return;
+      }
+
+      let output =
+        "Name: " + name + "\n" +
+        "Email: " + email + "\n" +
+        "Mobile: " + mobile + "\n" +
+        "Gender: " + gender + "\n" +
+        "Favorite Color: " + color;
+
+      resultBox.value = output; // show in textarea
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <form onsubmit="validate(event)">
+      <label for="name">Enter your name</label><br>
+      <input type="text" id="name" placeholder="Your Name"><br>
+
+      <label for="email">Enter your Email ID</label><br>
+      <input type="text" id="email" placeholder="Your Email"><br>
+
+      <label for="mobile">Enter your Mobile Number</label><br>
+      <input type="text" id="mobile" placeholder="Your Mobile Number"><br>
+
+      <label for="gender">Select Gender</label><br>
+      <select id="gender">
+        <option value="">Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select><br>
+
+      <label for="color">Enter Your Favorite Color</label><br>
+      <input type="text" id="color" placeholder="Your Favorite Color"><br>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <!-- Textarea to display result -->
+    <label for="result">Result:</label><br>
+    <textarea id="result" rows="6" readonly></textarea>
+  </div>
+</body>
+</html>
