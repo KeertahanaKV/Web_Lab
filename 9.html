@@ -1,4 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <title>XHTML Validation Form</title>
@@ -30,43 +31,51 @@
 
     <script type="text/javascript">
       function validate(event) {
-        event.preventDefault(); // Prevent form from submitting
-        function validate(event) {
-          event.preventDefault(); // Prevent form from submitting
+        event.preventDefault(); // prevent form from submitting
 
-          var userId = document.getElementById("user").value;
-          var name = document.getElementById("name").value;
-          var password = document.getElementById("password").value;
-          var email = document.getElementById("email").value;
+        var userId = document.getElementById("user").value;
+        var name = document.getElementById("name").value;
+        var password = document.getElementById("password").value;
+        var email = document.getElementById("email").value;
 
-          var nameRegex = /^[a-zA-Z\s]+$/;
-          var passwordRegex =
-            /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-          var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        // Regex patterns
+        var userIdRegex = /^[a-zA-Z0-9]{5,12}$/; // 5–12 alphanumeric
+        var nameRegex = /^[a-zA-Z\s]+$/; // alphabets only
+        var passwordRegex =
+          /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-          if (!nameRegex.test(name) || name.length < 15) {
-            alert(
-              "Name must contain only alphabets and be at least 15 characters long."
-            );
-            return false;
-          }
-
-          if (!passwordRegex.test(password)) {
-            alert(
-              "Password must be at least 8 characters long, include one uppercase letter, one special character, and alphanumeric characters."
-            );
-            return false;
-          }
-
-          if (!emailRegex.test(email)) {
-            alert("Invalid email address.");
-            return false;
-          }
-
-          alert("Form submitted successfully!");
-          return true;
+        // User ID validation
+        if (!userIdRegex.test(userId)) {
+          alert(
+            "User ID must be 5 to 12 characters long and contain only letters and numbers."
+          );
+          return false;
         }
 
+        // Name validation
+        if (!nameRegex.test(name) || name.length < 15) {
+          alert(
+            "Name must contain only alphabets and be at least 15 characters long."
+          );
+          return false;
+        }
+
+        // Password validation
+        if (!passwordRegex.test(password)) {
+          alert(
+            "Password must be at least 8 characters, include one uppercase letter, one number, and one special character."
+          );
+          return false;
+        }
+
+        // Email validation
+        if (!emailRegex.test(email)) {
+          alert("Invalid email address.");
+          return false;
+        }
+
+        // If all pass
         alert("Form submitted successfully!");
         return true;
       }
@@ -75,8 +84,9 @@
 
   <body>
     <div class="container">
-      <form onsubmit="validate(event)">
+      <form onsubmit="return validate(event)">
         <h1>Validation Form</h1>
+
         <label for="user">Enter Your User ID:</label><br />
         <input type="text" id="user" placeholder="Your User ID" /><br />
 
@@ -84,11 +94,7 @@
         <input type="text" id="name" placeholder="Your Name" /><br />
 
         <label for="password">Enter Your Password:</label><br />
-        <input
-          type="password"
-          id="password"
-          placeholder="Your Password"
-        /><br />
+        <input type="password" id="password" placeholder="Your Password" /><br />
 
         <label for="email">Enter Your Email ID:</label><br />
         <input type="text" id="email" placeholder="Your Email" /><br /><br />
